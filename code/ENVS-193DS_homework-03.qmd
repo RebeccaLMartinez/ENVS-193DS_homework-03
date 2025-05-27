@@ -13,11 +13,11 @@ GitHub repository: https://rebeccalmartinez.github.io/ENVS-193DS_homework-03/
 #| include: false
 #| message: false
 
-# Loading packages
-library(tidyverse)
-library(here)
-library(flextable)
-library(janitor)
+# packages needed
+ library(tidyverse)
+ library(here)
+ library(flextable)
+ library(janitor)
 
 service_data <- read_csv(here("data", "service_data.csv"))
 

@@ -115,3 +115,64 @@ Stacked bars show the number of service calls under each light condition (Workin
 
 
 
+#### d. Table Presentation
+
+```{r summary table}
+#
+# Create a summary table that counts how often help was or wasn’t needed,
+# grouped by the condition of the service light (working, broken, or unknown)
+
+help_summary <- clean_service_data |>
+  mutate(
+    # Turn the 'working' column into clear labels for light condition
+    light_status = case_when(
+      working == TRUE ~ "Working",
+      working == FALSE ~ "Broken",
+      is.na(working) ~ "Unknown"
+    ),
+    
+    # Turn the 'help' column into clear labels for help status
+    help_status = case_when(
+      help == TRUE ~ "Help Needed",
+      help == FALSE ~ "No Help Needed",
+      is.na(help) ~ "Unknown Help"
+    )
+  ) |>
+  
+  # Count how many service calls fall into each combination of light and help status
+  count(light_status, help_status) |>
+  
+  # Rearrange the data so each help type becomes its own column
+  pivot_wider(
+    names_from = help_status,
+    values_from = n,
+    values_fill = 0  # if a group doesn’t exist, fill it with 0
+  )
+
+# Make sure all expected help categories are included (even if not present in the data)
+for (col in c("Help Needed", "No Help Needed", "Unknown Help")) {
+  if (!col %in% names(help_summary)) {
+    help_summary[[col]] <- 0
+  }
+}
+
+# Order the rows so "Working" comes first and "Unknown" is last,
+# then select and reorder columns for readability
+help_summary <- help_summary |>
+  mutate(light_status = factor(light_status, levels = c("Working", "Broken", "Unknown"))) |>
+  arrange(light_status) |>
+  select(light_status, `Help Needed`, `No Help Needed`, `Unknown Help`) |>
+  
+  # Add a new column that totals the calls for each light condition
+  mutate(`Total Calls` = `Help Needed` + `No Help Needed` + `Unknown Help`)
+
+# Format the summary table for display using flextable
+help_summary |>
+  flextable() |>
+  set_header_labels(light_status = "Light Condition") |>
+  autofit() |>
+  set_caption("Table 1. Service calls by light condition and whether help was needed.")
+
+
+```
+

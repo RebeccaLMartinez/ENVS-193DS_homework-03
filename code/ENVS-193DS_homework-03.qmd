@@ -50,3 +50,49 @@ clean_service_data <- service_data |>  # using service_data set
 
 ```
 
+```{r stacked bar chart}
+
+# Create a stacked bar chart to compare how often help was or wasn't needed
+# across two conditions: working lights vs broken lights
+ggplot(clean_service_data, aes(x = working, fill = help)) +
+  
+  # Use stacked bars with slimmer width and black borders for clarity
+  geom_bar(position = "stack", width = 0.6, color = "black") +
+  
+  # Assign color to and titles to stacked bars
+  scale_fill_manual(
+    values = c("TRUE" = "forestgreen", "FALSE" = "red"),
+    labels = c("Help Not Needed", "Help Needed")
+  ) +
+  
+  # Replace raw logical values with clearer labels for x-axis categories
+  scale_x_discrete(labels = c("TRUE" = "Working", "FALSE" = "Broken")) +
+  
+  # Force y-axis to start at 0 
+  scale_y_continuous(limits = c(0, 50), expand = c(0, 0)) +
+  
+  # Set axis labels and title
+  labs(
+    x = "Light Condition",                   
+    y = "Number of Service Calls",
+    title = "Service Calls by Light Condition and Help Status"
+  ) +
+  
+  # Apply a minimal, clean theme and customize layout
+  theme_classic() +
+  theme(
+  # Center and bold the title
+    plot.title = element_text(face = "bold", hjust = 0.5, size = 16), 
+  # Bold axis labels
+    axis.title = element_text(face = "bold"),                          
+  # Move legend to top-right
+    legend.position = c(0.95, 0.95),                                   
+  # Align legend corner
+    legend.justification = c("right", "top"),                          
+  # Remove title
+    legend.title = element_blank()                                     
+  )
+
+
+```
+

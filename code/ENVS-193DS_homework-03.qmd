@@ -58,7 +58,18 @@ ggplot(clean_service_data, aes(x = working, fill = help)) +
   
   # Use stacked bars with slimmer width and black borders for clarity
   geom_bar(position = "stack", width = 0.6, color = "black") +
-  
+  # Add counts inside each bar segment
+  geom_text(
+  # Count the number of rows per group
+    stat = "count",
+  # Display the count as text
+    aes(label = ..count..),
+  # Position in each stacked segment
+    position = position_stack(vjust = 0.5),
+  # text color and size 
+   color = "black",
+    size = 4
+  ) +
   # Assign color to and titles to stacked bars
   scale_fill_manual(
     values = c("TRUE" = "forestgreen", "FALSE" = "red"),

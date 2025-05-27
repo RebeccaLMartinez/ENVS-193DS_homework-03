@@ -31,3 +31,22 @@ service_data <- read_csv(here("data", "service_data.csv"))
 #### a. Data summarizing 
 
 I could count the number of service calls where help was or wasn’t needed, grouped by whether the light was working or broken. Comparing these groups is informative because a broken light might influence whether guests mistakenly request help.
+
+#### b. Visualizations
+
+```{r data cleaning}
+
+# Clean and standardize help and working columns
+
+clean_service_data <- service_data |>  # using service_data set
+  mutate(
+    # Convert values to uppercase to avoid issues with lowercase na
+    help = toupper(help),
+    working = toupper(working),
+    # Convert the uppercase text to logical TRUE/FALSE values
+     help = as.logical(help), 
+    working = as.logical(working))
+
+
+```
+

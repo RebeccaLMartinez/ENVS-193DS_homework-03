@@ -1,23 +1,25 @@
 ---
-title: "homework-03"
+title: "Homework 3"
+subtitle: "ENVS-193DS"
 author: "Rebecca Martinez"
 format: html
 ---
 
+## Part 1. Setup Tasks
+
 GitHub repository: https://rebeccalmartinez.github.io/ENVS-193DS_homework-03/
 
 
-```{r setup}
+```{r setup, include = FALSE}
 
+#| label: setup
 #| warning: false
-#| include: false
-#| message: false
 
-# packages needed
- library(tidyverse)
- library(here)
- library(flextable)
- library(janitor)
+# Load packages 
+  library(tidyverse)
+  library(here)
+  library(flextable)
+  library(janitor)
 
 service_data <- read_csv(here("data", "service_data.csv"))
 
@@ -33,6 +35,8 @@ service_data <- read_csv(here("data", "service_data.csv"))
 I could count the number of service calls where help was or wasn’t needed, grouped by whether the light was working or broken. Comparing these groups is informative because a broken light might influence whether guests mistakenly request help.
 
 #### b. Visualizations
+
+Code for cleaning data:
 
 ```{r data cleaning}
 
@@ -50,7 +54,9 @@ clean_service_data <- service_data |>  # using service_data set
 
 ```
 
+
 ```{r stacked bar chart}
+
 
 # Create a stacked bar chart to compare how often help was or wasn't needed
 # across two conditions: working lights vs broken lights
@@ -63,7 +69,7 @@ ggplot(clean_service_data, aes(x = working, fill = help)) +
   # Count the number of rows per group
     stat = "count",
   # Display the count as text
-    aes(label = ..count..),
+    aes(label = after_stat(count)),
   # Position in each stacked segment
     position = position_stack(vjust = 0.5),
   # text color and size 
@@ -110,7 +116,7 @@ ggplot(clean_service_data, aes(x = working, fill = help)) +
 
 #### c. Caption
 
-_Figure 1. False service calls were more common when the light was broken._
+**Figure 1. False service calls were more common when the light was broken.**
 Stacked bars show the number of service calls under each light condition (Working vs. Broken), split by whether help was actually needed (green) or not (red). Out of 49 broken service lights, 45 did not require help and only 4 did. Out of 43 working service lights, 32 did not require help and 11 did. An additional 16 cases had unknown light status (and are not shown in the figure (gray).
 
 

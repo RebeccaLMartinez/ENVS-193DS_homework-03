@@ -1,9 +1,9 @@
 ### **Course:** ENVS 193DS
 ### **Author:** Rebecca Martinez
 
-README: https://rebeccalmartinez.github.io/ENVS-193DS_homework-03/
+[Github Page](https://github.com/RebeccaLMartinez/ENVS-193DS_homework-03)
 
-Github Page: https://rebeccalmartinez.github.io/ENVS-193DS_homework-03/
+[Rendered HTML](https://rebeccalmartinez.github.io/ENVS-193DS_homework-03/code/ENVS-193DS_homework-03.html)
 
 ## 📖 General Information
 This repository was created for Homework 3 in ENVS 193DS and explores affective data visualization using personal service call data. It includes:
@@ -18,9 +18,8 @@ This repository was created for Homework 3 in ENVS 193DS and explores affective 
 
 - A critique of a published ecological figure
 
-- The final product is a fully rendered HTML document created in Quarto.
-
-🔗 Rendered Homework: https://rebeccalmartinez.github.io/ENVS-193DS_homework-03/code/ENVS-193DS_homework-03.html
+- The final product is a fully [Rendered HTML](https://rebeccalmartinez.github.io/ENVS-193DS_homework-03/code/ENVS-193DS_homework-03.html)
+ document created in Quarto.
 
 ## 📁 Data and File Information
 - data/service_data.csv: Raw dataset containing service light conditions and help request info
@@ -43,4 +42,4 @@ The final rendered HTML includes:
 
 - 🔍 A statistical critique of a scientific figure with suggested improvements
 
-All code, narrative, and visuals are combined in ENVS-193DS_homework-03.qmd and rendered to GitHub Pages at the link above.
+All code, narrative, and visuals are combined in ENVS-193DS_homework-03.qmd and rendered to [Github Pages](https://github.com/RebeccaLMartinez/ENVS-193DS_homework-03).

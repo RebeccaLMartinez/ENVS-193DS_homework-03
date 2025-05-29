@@ -13,7 +13,7 @@ The assignment includes:
 - ✍️ A sketch and a short artist statement  
 - 📉 A critique of a scientific figure
 
-👉 **[View the full rendered HTML page](https://rebeccalmartinez.github.io/ENVS-193DS_homework-03/)**
+👉 **[View the full rendered HTML page]( https://rebeccalmartinez.github.io/ENVS-193DS_homework-03/code/ENVS-193DS_homework-03.html)**
 
 ---
 
@@ -44,6 +44,6 @@ This dataset contains **108 service calls** where I recorded whether help was ne
 ## 🔗 Additional Resources
 
 - [GitHub Repository](https://github.com/RebeccaLMartinez/ENVS-193DS_homework-03)  
-- [Rendered HTML Output](https://rebeccalmartinez.github.io/ENVS-193DS_homework-03/)
+- [Rendered HTML Output]( https://rebeccalmartinez.github.io/ENVS-193DS_homework-03/code/ENVS-193DS_homework-03.html)
 
 ---

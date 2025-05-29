@@ -205,9 +205,9 @@ My affective visualization sketch:
 
 #### c. Make a draft of your visualization
 
-```{r cleaning for blinking, message=FALSE, warning=FALSE}
+```{r cleaning for lightboard, message=FALSE, warning=FALSE}
 
-# Clean and transform data to prepare for lightboard animation
+# Clean and transform data to prepare for lightboard
 clean_lights <- service_data |>
   mutate(
     # Convert values to logical (TRUE/FALSE/NA)

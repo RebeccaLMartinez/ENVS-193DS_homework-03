@@ -45,7 +45,7 @@ I could count the number of service calls where help was or wasn’t needed, gro
 
 Code for cleaning data:
 
-```{r data cleaning}
+```{r data cleaning, message=FALSE, warning=FALSE}
 
 # Clean and standardize help and working columns
 
@@ -62,7 +62,7 @@ clean_service_data <- service_data |>  # using service_data set
 ```
 
 
-```{r stacked bar chart}
+```{r stacked bar chart, message=FALSE, warning=FALSE}
 
 
 # Create a stacked bar chart to compare how often help was or wasn't needed
@@ -130,7 +130,7 @@ Stacked bars show the number of service calls under each light condition (Workin
 
 #### d. Table Presentation
 
-```{r summary table}
+```{r summary table, message=FALSE, warning=FALSE}
 #
 # Create a summary table that counts how often help was or wasn’t needed,
 # grouped by the condition of the service light (working, broken, or unknown)

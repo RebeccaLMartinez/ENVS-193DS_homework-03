@@ -10,17 +10,24 @@ format: html
 GitHub repository: https://rebeccalmartinez.github.io/ENVS-193DS_homework-03/
 
 
-```{r setup, include = FALSE}
+```{r setup,  message=FALSE, warning=FALSE, error=FALSE}
 
-#| label: setup
-#| warning: false
 
-# Load packages 
-  library(tidyverse)
-  library(here)
-  library(flextable)
-  library(janitor)
+# Load packages for data, plots, effects, and animation
+library(tidyverse)   # Data wrangling and ggplot2 visualization
+library(here)      # Helps keep file paths consistent
+library(flextable) # Creates tables
+library(janitor)  # Cleans column names 
+library(ggtext)    # Styled/markdown text in ggplots
+library(ggfx)         # For visual effects for ggplot
+library(gganimate)    # Animation for ggplots
+library(showtext)     # Render text and emojis in plots better
 
+# Turn on showtext for smoother font/emoji rendering in plots
+showtext_auto()
+
+# Optional: Use this only if emojis don't show up correctly in saved plots
+# font_add("emoji", "seguiemj.ttf")
 service_data <- read_csv(here("data", "service_data.csv"))
 
 ```

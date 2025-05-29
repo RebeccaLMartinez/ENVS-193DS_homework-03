@@ -42,6 +42,7 @@ insta
 
 I could count the number of service calls where help was or wasn’t needed, grouped by whether the light was working or broken. Comparing these groups is informative because a broken light might influence whether guests mistakenly request help.
 
+
 #### b. Visualizations
 
 Code for cleaning data:
@@ -381,10 +382,12 @@ The study includes linear mixed models with the decay constant (k) as the respon
 ![](../images/fig4-bioturbation.png)
 
 #### b. Visual clarity
+
 The figure is generally clear. The x-axis represents cumulative litter mass remaining (%) and the y-axis shows nitrogen concentration (%N), with regression lines displayed for each treatment. The authors include R² values for each line, though the actual regression statistics are not provided in the caption—instead, readers are directed to a separate table. Data points and regression lines are overlaid effectively, and the use of faceting by litter type helps isolate trends.
 
 
 #### c. Aesthetic clarity
+
 The authors managed visual clutter reasonably well. Faceting helps separate the litter types clearly, and colors are used consistently to distinguish between surface and buried litter. However, some overlapping data points make it difficult to assess point density. A slight increase in transparency could better represent clustering without adding visual noise.
 
 

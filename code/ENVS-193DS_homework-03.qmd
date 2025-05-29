@@ -195,3 +195,8 @@ help_summary |>
 
 I could draw a light board or circuit board that shows which service lights were working and which were not. Each light would be a circle or dot, with different colors based on their status. I would add a symbol like an exclamation point for cases where help was needed, and a question mark for unknowns. It would look more like the data it represents.
 
+
+#### b. Create a sketch (on paper) of your idea.
+
+![](images/sketch.jpg)
+

@@ -203,8 +203,45 @@ My affective visualization sketch:
 ![](../images/sketch.png)
 
 
+#### c. Make a draft of your visualization
 
+```{r cleaning for blinking, message=FALSE, warning=FALSE}
 
+# Clean and transform data to prepare for lightboard animation
+clean_lights <- service_data |>
+  mutate(
+    # Convert values to logical (TRUE/FALSE/NA)
+    help = as.character(help),
+    working = as.character(working),
+    help = ifelse(help %in% c("T", "TRUE"), TRUE,
+           ifelse(help %in% c("F", "FALSE"), FALSE, NA)),
+    working = ifelse(working %in% c("T", "TRUE"), TRUE,
+              ifelse(working %in% c("F", "FALSE"), FALSE, NA)),
+
+    # Define status labels for light states
+    status = case_when(
+      is.na(working)     ~ "Unknown",
+      working            ~ "Working",
+      !working           ~ "Broken"
+    ),
+
+    # Assign color to each light status
+    color = case_when(
+      status == "Working"  ~ "yellow",
+      status == "Broken"   ~ "white",
+      status == "Unknown"  ~ "gray79"
+    ),
+
+    # Add emoji symbols to represent help requests or unknowns
+    symbol = case_when(
+      is.na(working)       ~ "❓",
+      help == TRUE         ~ "🛠️",
+      TRUE                 ~ ""
+    )
+  ) |>
+  arrange(status)  # Arrange so similar statuses appear together on the board
+
+```
 
 
 

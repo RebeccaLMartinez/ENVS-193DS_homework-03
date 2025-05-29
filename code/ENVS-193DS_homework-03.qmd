@@ -37,7 +37,7 @@ service_data <- read_csv(here("data", "service_data.csv"))
 ## Part 2. Problems
 
 ### Problem 1. Personal data 
-insta
+
 #### a. Data summarizing 
 
 I could count the number of service calls where help was or wasn’t needed, grouped by whether the light was working or broken. Comparing these groups is informative because a broken light might influence whether guests mistakenly request help.

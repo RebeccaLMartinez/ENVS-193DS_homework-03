@@ -245,6 +245,112 @@ clean_lights <- service_data |>
 
 
 
+```{r blinking service lights, message=FALSE, warning=FALSE}
+
+# Add position and ID for each light on the grid
+glow_lights <- clean_lights |>
+  mutate(
+    light_id = row_number(),
+    x = (light_id - 1) %% 9,              # 9 lights per row
+    y = -((light_id - 1) %/% 9)           # create rows top to bottom
+  )
+
+# Create "on" version (all lights visible)
+lights_on <- glow_lights |>
+  mutate(blink_state = "on")
+
+# Create "off" version (only hide working lights)
+lights_off <- glow_lights |>
+  mutate(
+    blink_state = "off",
+    status = ifelse(status == "Working", NA, status)
+  )
+
+# Combine both states for animation
+blinking_glow_lights <- bind_rows(lights_on, lights_off)
+
+
+```
+
+
+
+```{r blinking plot, message=FALSE, warning=FALSE}
+
+# Create the blinking lightboard plot
+blink_plot <- ggplot(blinking_glow_lights, aes(x, y)) +
+
+  # Add glow effect to working (yellow) lights
+  with_outer_glow(
+    geom_point(
+      data = subset(blinking_glow_lights, status == "Working"),
+      aes(fill = status, group = light_id),
+      shape = 21,
+      size = 6,
+      color = "gold2",
+      stroke = 0.5,
+      na.rm = TRUE
+    ),
+    colour = "gold3",
+    sigma = 5,
+    expand = 2
+  ) +
+
+  # Add static (non-working/unknown) lights
+  geom_point(
+    data = subset(blinking_glow_lights, !status %in% c("Working") & !is.na(status)),
+    aes(fill = status),
+    shape = 21,
+    size = 6,
+    color = "gray30",
+    stroke = 0.5
+  ) +
+
+  # Overlay emoji symbols
+  geom_text(
+    aes(label = symbol),
+    family = "emoji",
+    size = 7,
+    fontface = "bold",
+    color = "red2",
+    na.rm = TRUE
+  ) +
+
+  # Set colors and labels for legend
+  scale_fill_manual(
+    values = c(
+      "Working" = "yellow",
+      "Broken" = "white",
+      "Unknown" = "gray79"
+    ),
+    name = "Light Status"
+  ) +
+
+  coord_fixed() +  # Keep square grid cells
+
+  # Add title and caption
+  labs(
+    title = "Service Lights",
+    caption = "🛠️ Helped     ❓ Unknown"
+  ) +
+
+  # Simplify background and layout
+  theme_void() +
+  theme(
+    legend.position = "bottom",
+    legend.title = element_text(face = "bold"),
+    legend.text = element_text(size = 10),
+    legend.key.width = unit(2, "cm"),
+    plot.caption = element_text(family = "emoji", size = 10, hjust = 0.5),
+    plot.background = element_rect(fill = "white", color = NA),
+    plot.margin = margin(20, 20, 60, 20),      # Extra space for legend/caption
+    legend.box.margin = margin(t = 10)
+  ) +
+
+  # Animate blinking by switching between states
+  transition_states(blink_state, wrap = TRUE) +
+  ease_aes("linear")
+
+```
 
 
 

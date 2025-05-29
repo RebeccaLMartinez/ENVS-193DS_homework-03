@@ -27,7 +27,7 @@ library(showtext)     # Render text and emojis in plots better
 showtext_auto()
 
 # Optional: Use this only if emojis don't show up correctly in saved plots
-# font_add("emoji", "seguiemj.ttf")
+font_add("emoji", "seguiemj.ttf")
 service_data <- read_csv(here("data", "service_data.csv"))
 
 ```
@@ -244,7 +244,6 @@ clean_lights <- service_data |>
 ```
 
 
-
 ```{r blinking service lights, message=FALSE, warning=FALSE}
 
 # Add position and ID for each light on the grid
@@ -268,13 +267,6 @@ lights_off <- glow_lights |>
 
 # Combine both states for animation
 blinking_glow_lights <- bind_rows(lights_on, lights_off)
-
-
-```
-
-
-
-```{r blinking plot, message=FALSE, warning=FALSE}
 
 # Create the blinking lightboard plot
 blink_plot <- ggplot(blinking_glow_lights, aes(x, y)) +
@@ -354,5 +346,23 @@ blink_plot <- ggplot(blinking_glow_lights, aes(x, y)) +
 
 
 
+```{r animate, eval=FALSE, message=FALSE, warning=FALSE}
 
+# Save the animation to a GIF (run this manually in Console)
+# Do not run during Quarto rendering or it may crash
+animate(
+  blink_plot,
+  fps = 4,                     # Frames per second
+  nframes = 8,                 # Total frames
+  width = 800,
+  height = 600,
+  renderer = gifski_renderer("blinking_lights.gif")
+)
+
+
+
+```
+
+
+![](../blinking_lights.gif)
 

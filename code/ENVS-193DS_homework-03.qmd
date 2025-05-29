@@ -364,7 +364,7 @@ animate(
 ```
 
 
-![](../blinking_lights.gif)
+![](blinking_lights.gif)
 
 #### d. Write an artist statement.
 

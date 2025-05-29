@@ -364,7 +364,7 @@ animate(
 ```
 
 
-![](blinking_lights.gif)
+![](../blinking_lights.gif)
 
 #### d. Write an artist statement.
 
@@ -377,7 +377,7 @@ This project shows service lights as a grid, using colors to show if they were w
 
 The study includes linear mixed models with the decay constant (k) as the response variable, representing the rate of litter decomposition, and predictor variables including litter type and placement. The authors also use regression analyses with nitrogen and phosphorus concentrations in litter as response variables, and the percentage of litter mass remaining as the predictor variable. These statistical tests compare decomposition rates and nutrient dynamics between buried litter (under gopher mounds) and surface litter. A significant result (p < 0.05) would support the hypothesis that gopher bioturbation accelerates decomposition and nutrient turnover, while also helping to conserve nutrients in fire-prone ecosystems.
 
-![](images/fig4-bioturbation.png)
+![](../images/fig4-bioturbation.png)
 
 #### b. Visual clarity (10 points)
 The figure is generally clear. The x-axis represents cumulative litter mass remaining (%) and the y-axis shows nitrogen concentration (%N), with regression lines displayed for each treatment. The authors include R² values for each line, though the actual regression statistics are not provided in the caption—instead, readers are directed to a separate table. Data points and regression lines are overlaid effectively, and the use of faceting by litter type helps isolate trends.

@@ -198,5 +198,18 @@ I could draw a light board or circuit board that shows which service lights were
 
 #### b. Create a sketch (on paper) of your idea.
 
-![](images/sketch.jpg)
+My affective visualization sketch:
+
+![](../images/sketch.png)
+
+
+
+
+
+
+
+
+
+
+
 

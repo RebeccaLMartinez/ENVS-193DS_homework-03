@@ -5,7 +5,7 @@ author: "Rebecca Martinez"
 format: html
 ---
 
-## Part 1. Setup Tasks
+## Part 1. Setup tasks
 
 GitHub repository: https://rebeccalmartinez.github.io/ENVS-193DS_homework-03/
 
@@ -128,7 +128,7 @@ Stacked bars show the number of service calls under each light condition (Workin
 
 
 
-#### d. Table Presentation
+#### d. Table presentation
 
 ```{r summary table, message=FALSE, warning=FALSE}
 #
@@ -188,4 +188,10 @@ help_summary |>
 
 
 ```
+
+### Problem 2. Affective visualization
+
+#### a. Describe in words what an affective visualization could look like for your personal data
+
+I could draw a light board or circuit board that shows which service lights were working and which were not. Each light would be a circle or dot, with different colors based on their status. I would add a symbol like an exclamation point for cases where help was needed, and a question mark for unknowns. It would look more like the data it represents.
 

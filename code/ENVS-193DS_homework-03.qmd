@@ -6,9 +6,11 @@ date: "May 28, 2025"
 format: html
 ---
 
+
 ## Part 1. Setup tasks
 
-GitHub repository: https://rebeccalmartinez.github.io/ENVS-193DS_homework-03/
+GitHub repository: [https://rebeccalmartinez.github.io/ENVS-193DS_homework-03/](https://rebeccalmartinez.github.io/ENVS-193DS_homework-03/)
+
 
 
 ```{r setup,  message=FALSE, warning=FALSE, error=FALSE}
@@ -230,8 +232,7 @@ clean_lights <- service_data |>
     # Assign color to each light status
     color = case_when(
       status == "Working"  ~ "yellow",
-      status == "Broken"   ~ "white",
-      status == "Unknown"  ~ "gray79"
+      status == "Broken"   ~ "white"
     ),
 
     # Add emoji symbols to represent help requests or unknowns
@@ -291,7 +292,7 @@ blink_plot <- ggplot(blinking_glow_lights, aes(x, y)) +
 
   # Add static (non-working/unknown) lights
   geom_point(
-    data = subset(blinking_glow_lights, !status %in% c("Working") & !is.na(status)),
+    data = subset(blinking_glow_lights, status == "Broken"),
     aes(fill = status),
     shape = 21,
     size = 6,
@@ -313,8 +314,7 @@ blink_plot <- ggplot(blinking_glow_lights, aes(x, y)) +
   scale_fill_manual(
     values = c(
       "Working" = "yellow",
-      "Broken" = "white",
-      "Unknown" = "gray79"
+      "Broken" = "white"
     ),
     name = "Light Status"
   ) +
@@ -365,8 +365,7 @@ animate(
 
 ```
 
-
-![](../blinking_lights.gif)
+![Total Service Calls](../blinking_lights.gif)
 
 #### d. Write an artist statement.
 
@@ -379,7 +378,8 @@ This project shows service lights as a grid, using colors to show if they were w
 
 The study includes linear mixed models with the decay constant (k) as the response variable, representing the rate of litter decomposition, and predictor variables including litter type and placement. The authors also use regression analyses with nitrogen and phosphorus concentrations in litter as response variables, and the percentage of litter mass remaining as the predictor variable. These statistical tests compare decomposition rates and nutrient dynamics between buried litter (under gopher mounds) and surface litter. A significant result (p < 0.05) would support the hypothesis that gopher bioturbation accelerates decomposition and nutrient turnover, while also helping to conserve nutrients in fire-prone ecosystems.
 
-![](../images/fig4-bioturbation.png)
+
+![Fig. 4](../images/fig4-bioturbation.png)
 
 #### b. Visual clarity
 

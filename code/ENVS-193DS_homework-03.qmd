@@ -365,7 +365,7 @@ animate(
 
 ```
 
-![Total Service Calls](../blinking_lights.gif)
+![Total Service Calls](../images/blinking_lights.gif)
 
 #### d. Write an artist statement.
 

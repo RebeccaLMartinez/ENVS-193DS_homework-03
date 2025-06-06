@@ -1,45 +1,49 @@
-### **Course:** ENVS 193DS
-### **Author:** Rebecca Martinez
-
-[Github Page](https://github.com/RebeccaLMartinez/ENVS-193DS_homework-03)
-
-[Rendered HTML](https://rebeccalmartinez.github.io/ENVS-193DS_homework-03/code/ENVS-193DS_homework-03.html)
+# Homework 3
+**Course:** ENVS 193DS  
+**Author:** Rebecca Martinez
 
 ## 📖 General Information
-This repository was created for Homework 3 in ENVS 193DS and explores affective data visualization using personal service call data. It includes:
 
-- A stacked bar chart comparing help requests by light condition
+This project was created for Homework 3 in ENVS 193DS.
 
-- A summary table of service data
+The assignment includes:
+- 📊 A bar chart comparing help requests by light condition  
+- 📋 A summary table of service calls  
+- 💡 An animated **blinking lightboard** to represent service data  
+- ✍️ A sketch and a short artist statement  
+- 📉 A critique of a scientific figure
 
-- A creative affective visualization: an animated lightboard that blinks to reflect service status
+👉 **[View the full rendered HTML page]( https://rebeccalmartinez.github.io/ENVS-193DS_homework-03/code/ENVS-193DS_homework-03.html)**
 
-- A hand-drawn sketch and artist statement
-
-- A critique of a published ecological figure
-
-- The final product is a fully [Rendered HTML](https://rebeccalmartinez.github.io/ENVS-193DS_homework-03/code/ENVS-193DS_homework-03.html)
- document created in Quarto.
+---
 
 ## 📁 Data and File Information
-- data/service_data.csv: Raw dataset containing service light conditions and help request info
-- ENVS-193DS_homework-03.qmd: Main Quarto file containing all code, narrative, and visualizations
-- blinking_lights.gif: Animated lightboard visualization created using R and gganimate
-- sketch.png/sketch.jpg: Hand-drawn sketch of the affective visualization idea
-- fig4-bioturbation.png/fig4-bioturbation.jpg: Figure used for the statistical critique in Problem 3
-- README.md: This overview file for the GitHub repository
 
-## 🌐 Rendered Output
-The final rendered HTML includes:
+This dataset contains **108 service calls** where I recorded whether help was needed and whether the service light was physically working. Other context like time, staffing, and events is included.
 
-- 📊 A stacked bar chart showing how help requests vary by light status
+### Variables:
+- `date` – Date of the call  
+- `time_interval` – Time block of the call  
+- `help` – Whether help was needed (`TRUE`, `FALSE`, or `NA`)  
+- `working` – Whether the light worked (`TRUE`, `FALSE`, or `NA`)  
+- `staff_total` – Staff present at the time  
+- `machines_active` – Machines running nearby  
+- `weekday` – Day of the week  
+- `event` – Event happening (e.g., `giveaway`, `show`, `holiday`)
 
-- 🧮 A summary table grouping help status by condition
+### Project Files:
+- [`data/service_data.csv`](data/service_data.csv) – Main dataset  
+- [`ENVS-193DS_homework-03.qmd`](ENVS-193DS_homework-03.qmd) – Quarto file with code, analysis, and narrative  
+- [`blinking_lights.gif`](blinking_lights.gif) – Final animated lightboard  
+- [`images/sketch.png`](images/sketch.png) – Hand-drawn concept sketch  
+- [`images/fig4-bioturbation.png`](images/fig4-bioturbation.png) – Figure for critique  
+- `README.md` – This summary document
 
-- 💡 An animated lightboard, where working lights blink and glow
+---
 
-- ✍️ A sketch of the concept and a written artist statement
+## 🔗 Additional Resources
 
-- 🔍 A statistical critique of a scientific figure with suggested improvements
+- [GitHub Repository](https://github.com/RebeccaLMartinez/ENVS-193DS_homework-03)  
+- [Rendered HTML Output]( https://rebeccalmartinez.github.io/ENVS-193DS_homework-03/code/ENVS-193DS_homework-03.html)
 
-All code, narrative, and visuals are combined in ENVS-193DS_homework-03.qmd and rendered to [Github Pages](https://github.com/RebeccaLMartinez/ENVS-193DS_homework-03).
+---
